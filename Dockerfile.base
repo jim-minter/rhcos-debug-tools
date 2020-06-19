@@ -1,5 +1,5 @@
-FROM registry.redhat.io/ubi8/ubi
 ARG VERSION
+FROM registry.redhat.io/ubi8/ubi
 RUN yum --setopt=tsflags=nodocs -y upgrade \
   && yum --setopt=tsflags=nodocs -y install \
     ethtool \
@@ -8,6 +8,7 @@ RUN yum --setopt=tsflags=nodocs -y upgrade \
     kernel-core-$VERSION \
     kernel-devel-$VERSION \
     less \
+    net-tools \
     perf \
     strace \
     systemtap \
