@@ -1,6 +1,6 @@
 ARG BASE
-ARG VERSION
 FROM $BASE
+ARG VERSION
 RUN yum --setopt=tsflags=nodocs --enablerepo=rhel-8-for-x86_64-baseos-debug-rpms -y install \
     kernel-debuginfo-$VERSION \
   && yum clean all
